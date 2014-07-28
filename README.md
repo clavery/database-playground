@@ -5,5 +5,7 @@ Redis. All database ports are mapped to the host machine.
 
 ```
 postgresql superuser u/p: vagrant / vagrant
+
+database 'playground' created
 ```
 

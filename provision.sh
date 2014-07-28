@@ -10,6 +10,7 @@ service postgresql restart
 
 sudo -u postgres psql <<ENDPSQL
 CREATE ROLE vagrant WITH LOGIN SUPERUSER CREATEDB CREATEROLE ENCRYPTED PASSWORD 'vagrant';
+CREATE DATABASE playground OWNER vagrant;
 ENDPSQL
 
 apt-get -y install redis-server
