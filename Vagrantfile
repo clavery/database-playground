@@ -16,10 +16,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision "shell", path: "provision.sh"
 
+  config.vm.provision :salt do |salt|
+
+    salt.minion_config = "salt/minion"
+    salt.run_highstate = true
+
+  end
+
   config.ssh.forward_agent = true
 
   config.vm.provider "virtualbox" do |v|
-    v.memory = 1024
+    v.memory = 2048
     v.cpus = 2
   end
 end
